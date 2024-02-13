@@ -2,10 +2,12 @@ Video: https://www.youtube.com/watch?v=ADJKbuayubE&t=2770s&ab_channel=CodeWithAn
 
 ```
 > npx shadcn-ui@latest add button
+> npm install convex
 ```
 
 
 # To Run
 ```bash
-npm run dev
+> npx convex dev
+> npm run dev
 ```
