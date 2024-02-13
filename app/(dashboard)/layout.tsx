@@ -1,3 +1,4 @@
+import { Navbar } from "@/app/(dashboard)/_components/navbar";
 import { OrgSidebar } from "@/app/(dashboard)/_components/org-sidebar";
 import { Sidebar } from "@/app/(dashboard)/_components/sidebar";
 
@@ -13,7 +14,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
         <div className="flex gap-x-3 h-full">
           <OrgSidebar />
           <div className="h-full flex-1">
-            {/* Add Navbar */}
+            <Navbar />
             {children}</div>
         </div>
       </div>
