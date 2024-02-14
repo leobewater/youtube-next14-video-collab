@@ -9,7 +9,7 @@ import {
 } from "@clerk/nextjs";
 
 export const Navbar = () => {
-  const organization = useOrganization();
+  const { organization } = useOrganization();
 
   return (
     <div className="flex items-center gap-x-4 p-5">
