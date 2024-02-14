@@ -1,5 +1,6 @@
 "use client";
 
+import { InviteButton } from "@/app/(dashboard)/_components/invite-button";
 import { SearchInput } from "@/app/(dashboard)/_components/search-input";
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
 
@@ -33,6 +34,7 @@ export const Navbar = () => {
         }}
       />
       </div>
+      <InviteButton />
       <UserButton />
     </div>
   );
