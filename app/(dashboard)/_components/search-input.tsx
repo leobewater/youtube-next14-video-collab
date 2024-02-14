@@ -1,7 +1,21 @@
 "use client";
 
+import qs from 'query-string';
+import { Search } from 'lucide-react';
+import { useDebounceValue } from 'usehooks-ts';
+import { useRouter } from 'next/navigation';
+import {
+  ChangeEvent,
+  useEffect,
+  useState
+} from 'react'
+import { Input } from '@/components/ui/input';
+
 export const SearchInput = () => {
   return (
-    <div>Search Input</div>
+    <div className='w-full relative'>
+      <Search />
+      <Input />
+    </div>
   )
 }

@@ -4,6 +4,8 @@ Video: https://www.youtube.com/watch?v=ADJKbuayubE&t=2770s&ab_channel=CodeWithAn
 > npx shadcn-ui@latest add button
 > npx shadcn-ui@latest add dialog
 > npx shadcn-ui@latest add tooltip
+> npx shadcn-ui@latest add input
+
 
 > npm install convex
 > npm install @clerk/nextjs
