@@ -6,6 +6,7 @@ Video: https://www.youtube.com/watch?v=ADJKbuayubE&t=2770s&ab_channel=CodeWithAn
 > npx shadcn-ui@latest add tooltip
 > npx shadcn-ui@latest add input
 > npx shadcn-ui@latest add sonner
+> npx shadcn-ui@latest add skeleton
 
 > npm install convex
 > npm install @clerk/nextjs
