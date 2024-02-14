@@ -7,6 +7,9 @@ Video: https://www.youtube.com/watch?v=ADJKbuayubE&t=2770s&ab_channel=CodeWithAn
 
 > npm install convex
 > npm install @clerk/nextjs
+
+> npm i query-string
+> npm i usehooks-ts
 ```
 
 
