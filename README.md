@@ -12,6 +12,7 @@ Video: https://www.youtube.com/watch?v=ADJKbuayubE&t=2770s&ab_channel=CodeWithAn
 
 > npm i query-string
 > npm i usehooks-ts
+> npm i date-fns
 ```
 
 
