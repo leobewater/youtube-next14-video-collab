@@ -1,5 +1,6 @@
 "use client";
 
+import { Overlay } from "@/app/(dashboard)/_components/board-card/overlay";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -29,6 +30,7 @@ export const BoardCard = ({
       <div className="group aspect-[100/127] border rounded-lg flex flex-col justify-between overflow-hidden">
         <div className="relative flex-1 bg-amber-50">
           <Image src={imageUrl} alt={title} fill className="object-fit" />
+          <Overlay />
         </div>
       </div>
     </Link>
