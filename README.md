@@ -7,6 +7,8 @@ Video: https://www.youtube.com/watch?v=ADJKbuayubE&t=2770s&ab_channel=CodeWithAn
 > npx shadcn-ui@latest add input
 > npx shadcn-ui@latest add sonner
 > npx shadcn-ui@latest add skeleton
+> npx shadcn-ui@latest add dropdown-menu
+> npx shadcn-ui@latest add alert-dialog
 
 > npm install convex
 > npm install @clerk/nextjs
@@ -14,6 +16,7 @@ Video: https://www.youtube.com/watch?v=ADJKbuayubE&t=2770s&ab_channel=CodeWithAn
 > npm i query-string
 > npm i usehooks-ts
 > npm i date-fns
+> npm i zustand
 ```
 
 
