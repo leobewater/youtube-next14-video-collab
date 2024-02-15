@@ -18,7 +18,7 @@ interface ToolbarProps {
   redo: () => void;
   canUndo: boolean;
   canRedo: boolean;
-};
+}
 
 export const Toolbar = ({
   canvasState,
@@ -40,8 +40,8 @@ export const Toolbar = ({
         <ToolButton
           label="Text"
           icon={Type}
-          onClick={() => {}}
-          isActive={false}
+          onClick={() => setCanvasState({ mode: CanvasMode.Inserting })}
+          isActive={canvasState.mode === CanvasMode.Inserting}
         />
         <ToolButton
           label="Sticky note"
