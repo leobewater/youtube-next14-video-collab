@@ -1,17 +1,18 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Poppins } from "next/font/google";
+import { Menu } from "lucide-react";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { useQuery } from "convex/react";
+
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { Hint } from "@/components/hint";
 import { useRenameModal } from "@/store/use-rename-modal";
 import { Actions } from "@/components/actions";
-import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Hint } from "@/components/hint";
 
 interface InfoProps {
   boardId: string;

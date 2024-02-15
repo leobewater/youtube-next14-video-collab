@@ -9,6 +9,7 @@ Video: https://www.youtube.com/watch?v=ADJKbuayubE&t=2770s&ab_channel=CodeWithAn
 > npx shadcn-ui@latest add skeleton
 > npx shadcn-ui@latest add dropdown-menu
 > npx shadcn-ui@latest add alert-dialog
+> npx shadcn-ui@latest add avatar
 
 > npm install convex
 > npm i convex-helpers
