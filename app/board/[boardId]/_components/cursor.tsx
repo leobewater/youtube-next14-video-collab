@@ -1,6 +1,4 @@
 import { useOther } from "@/liveblocks.config";
-import { connect } from "http2";
-import { userAgent } from "next/server";
 import { memo } from "react";
 
 interface CursorProps {
@@ -9,7 +7,7 @@ interface CursorProps {
 
 export const Cursor = memo(({ connectionId }: CursorProps) => {
   const info = useOther(connectionId, (user) => user?.info);
-  const cursor = useOther(connectionId, (use) => user.presence.cursor);
+  const cursor = useOther(connectionId, (user) => user.presence.cursor);
 
   const name = info?.name || "Teammate";
 
