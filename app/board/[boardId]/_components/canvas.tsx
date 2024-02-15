@@ -7,6 +7,7 @@ import { CanvasMode, CanvasState } from "@/types/canvas";
 import { Info } from "@/app/board/[boardId]/_components/info";
 import { Participants } from "@/app/board/[boardId]/_components/participants";
 import { Toolbar } from "@/app/board/[boardId]/_components/toolbar";
+import { CursorsPresence } from "@/app/board/[boardId]/_components/cursors-presence";
 
 interface CanvasProps {
   boardId: string;
