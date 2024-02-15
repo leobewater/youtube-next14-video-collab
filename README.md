@@ -22,6 +22,7 @@ Video: https://www.youtube.com/watch?v=ADJKbuayubE&t=2770s&ab_channel=CodeWithAn
 > npm i @liveblocks/client
 > npm i @liveblocks/react
 > npx create-liveblocks-app@latest --init --framework react
+> npm i @liveblocks/node
 ```
 
 
