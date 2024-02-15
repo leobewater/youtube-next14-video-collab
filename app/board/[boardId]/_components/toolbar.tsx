@@ -18,7 +18,7 @@ interface ToolbarProps {
   redo: () => void;
   canUndo: boolean;
   canRedo: boolean;
-}
+};
 
 export const Toolbar = ({
   canvasState,
@@ -68,18 +68,18 @@ export const Toolbar = ({
           isActive={false}
         />
       </div>
-      <div className="bg-white rounded-md p-1.5 flex flex-col items items-center shadow-md">
+      <div className="bg-white rounded-md p-1.5 flex flex-col items-center shadow-md">
         <ToolButton
           label="Undo"
           icon={Undo2}
           onClick={undo}
-          isActive={!canUndo}
+          isDisabled={!canUndo}
         />
         <ToolButton
           label="Redo"
           icon={Redo2}
           onClick={redo}
-          isActive={!canRedo}
+          isDisabled={!canRedo}
         />
       </div>
     </div>
