@@ -18,6 +18,9 @@ Video: https://www.youtube.com/watch?v=ADJKbuayubE&t=2770s&ab_channel=CodeWithAn
 > npm i usehooks-ts
 > npm i date-fns
 > npm i zustand
+
+> npm i @liveblocks/client
+> npm i @liveblocks/react
 ```
 
 
