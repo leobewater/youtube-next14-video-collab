@@ -3,6 +3,7 @@
 import { useOthers, useSelf } from "@/liveblocks.config";
 
 import { UserAvatar } from "@/app/board/[boardId]/_components/user-avatar";
+import { connectionIdToColor } from "@/lib/utils";
 
 // show max other users, excluding yourself
 const MAX_SHOWN_USERS = 1;
@@ -17,6 +18,7 @@ export const Participants = () => {
       <div className="flex gap-x-2">
         {users.slice(0, MAX_SHOWN_USERS).map(({ connectionId, info }) => (
           <UserAvatar
+            borderColor={connectionIdToColor(connectionId)}
             key={connectionId}
             src={info?.picture}
             name={info?.name}
@@ -26,6 +28,7 @@ export const Participants = () => {
 
         {currentUser && (
           <UserAvatar
+            borderColor={connectionIdToColor(currentUser.connectionId)}
             src={currentUser.info?.picture}
             name={`${currentUser.info?.name} (You)`}
             fallback={currentUser.info?.name?.[0]}
