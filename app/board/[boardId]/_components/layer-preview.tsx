@@ -1,5 +1,6 @@
 "use client";
 
+import { Rectangle } from "@/app/board/[boardId]/_components/rectangle";
 import { useStorage } from "@/liveblocks.config";
 import { LayerType } from "@/types/canvas";
 import { memo } from "react";
@@ -17,11 +18,13 @@ export const LayerPreview = memo(
       return null;
     }
 
+    console.log({ layer });
+
     switch (layer.type) {
       case LayerType.Rectangle:
         return (
-          <div>Rectangle</div>
-        )
+          <Rectangle id={id} layer={layer} onPointerDown={onLayerPointerDown} />
+        );
       default:
         console.warn("Unknown layer type");
         return null;
