@@ -85,7 +85,7 @@ export enum Side {
   Bottom = 2,
   Left = 4,
   Right = 8,
-}
+};
 
 export type CanvasState =
   | {
@@ -129,7 +129,7 @@ export enum CanvasMode {
   Inserting,
   Resizing,
   Pencil,
-}
+};
 
 export type Layer =
   | RectangleLayer

@@ -1,3 +1,4 @@
+"use client";
 import { connectionIdToColor } from "@/lib/utils";
 import { useOther } from "@/liveblocks.config";
 import { MousePointer2 } from "lucide-react";
