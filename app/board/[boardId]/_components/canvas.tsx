@@ -8,12 +8,14 @@ import {
   useMutation,
 } from "@/liveblocks.config";
 
+import { pointerEventToCanvasPoint } from "@/lib/utils";
 import { Camera, CanvasMode, CanvasState } from "@/types/canvas";
 import { Info } from "@/app/board/[boardId]/_components/info";
 import { Participants } from "@/app/board/[boardId]/_components/participants";
 import { Toolbar } from "@/app/board/[boardId]/_components/toolbar";
 import { CursorsPresence } from "@/app/board/[boardId]/_components/cursors-presence";
-import { pointerEventToCanvasPoint } from "@/lib/utils";
+
+const MAX_LAYERS = 100;
 
 interface CanvasProps {
   boardId: string;
@@ -73,7 +75,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
         onPointerMove={onPointerMove}
         onPointerLeave={onPointerLeave}
       >
-        <g>
+        <g style={{ transform: `translate(${camera.x}px), ${camera.y}px` }}>
           <CursorsPresence />
         </g>
       </svg>
