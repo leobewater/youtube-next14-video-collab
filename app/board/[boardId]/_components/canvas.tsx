@@ -1,19 +1,29 @@
 "use client";
 
 import { useCallback, useState } from "react";
+import { nanoid } from "nanoid";
 import {
   useHistory,
   useCanUndo,
   useCanRedo,
   useMutation,
+  useStorage,
 } from "@/liveblocks.config";
 
 import { pointerEventToCanvasPoint } from "@/lib/utils";
-import { Camera, CanvasMode, CanvasState } from "@/types/canvas";
+import {
+  Camera,
+  CanvasMode,
+  CanvasState,
+  Color,
+  LayerType,
+  Point,
+} from "@/types/canvas";
 import { Info } from "@/app/board/[boardId]/_components/info";
 import { Participants } from "@/app/board/[boardId]/_components/participants";
 import { Toolbar } from "@/app/board/[boardId]/_components/toolbar";
 import { CursorsPresence } from "@/app/board/[boardId]/_components/cursors-presence";
+import { LiveObject } from "@liveblocks/client";
 
 const MAX_LAYERS = 100;
 
@@ -22,15 +32,57 @@ interface CanvasProps {
 }
 
 export const Canvas = ({ boardId }: CanvasProps) => {
+  const layerIds = useStorage((root) => root.layerIds);
+
   const [canvasState, setCanvasState] = useState<CanvasState>({
     mode: CanvasMode.None,
   });
-
   const [camera, setCamera] = useState<Camera>({ x: 0, y: 0 });
+  // initial color as black
+  const [lastUsedColor, setLastUsedColor] = useState<Color>({
+    r: 0,
+    g: 0,
+    b: 0,
+  });
 
   const history = useHistory();
   const canUndo = useCanUndo();
   const canRedo = useCanRedo();
+
+  const insertLayer = useMutation(
+    (
+      { storage, setMyPresence },
+      layerType:
+        | LayerType.Ellipse
+        | LayerType.Rectangle
+        | LayerType.Text
+        | LayerType.Note,
+      position: Point
+    ) => {
+      const liveLayers = storage.get("layers");
+      if (liveLayers.size >= MAX_LAYERS) {
+        return;
+      }
+
+      const liveLayerIds = storage.get("layerIds");
+      const layerId = nanoid();
+      const layer = new LiveObject({
+        type: layerType,
+        x: position.x,
+        y: position.y,
+        height: 100,
+        width: 100,
+        fill: lastUsedColor,
+      });
+
+      liveLayerIds.push(layerId);
+      liveLayers.set(layerId, layer);
+
+      setMyPresence({ selection: [layerId] }, { addToHistory: true });
+      setCanvasState({ mode: CanvasMode.None });
+    },
+    [lastUsedColor]
+  );
 
   const onWheel = useCallback((e: React.WheelEvent) => {
     // console.log({ x: e.deltaX, y: e.deltaY });
