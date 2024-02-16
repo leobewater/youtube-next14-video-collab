@@ -26,6 +26,7 @@ import { Toolbar } from "@/app/board/[boardId]/_components/toolbar";
 import { CursorsPresence } from "@/app/board/[boardId]/_components/cursors-presence";
 import { LiveObject } from "@liveblocks/client";
 import { LayerPreview } from "@/app/board/[boardId]/_components/layer-preview";
+import { SelectionBox } from "@/app/board/[boardId]/_components/selection-box";
 
 const MAX_LAYERS = 100;
 
@@ -196,6 +197,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
               selectionColor={layerIdsToColorSelection[layerId]}
             />
           ))}
+          <SelectionBox onResizeHandlePointerDown={() => { }} />
           <CursorsPresence />
         </g>
       </svg>
