@@ -13,17 +13,17 @@ export const Rectangle = ({
   onPointerDown,
   selectionColor,
 }: RectangleProps) => {
-  console.log({
-    id,
-    layer,
-  });
+  // console.log({
+  //   id,
+  //   layer,
+  // });
   const { x, y, width, height, fill } = layer;
 
   return (
     <rect
       className="drop-shadow-md"
       onPointerDown={(e) => onPointerDown(e, id)}
-      style={{ transform: `translate(${x}px), ${y}px)` }}
+      style={{ transform: `translate(${x}px, ${y}px)` }}
       x={0}
       y={0}
       width={width}

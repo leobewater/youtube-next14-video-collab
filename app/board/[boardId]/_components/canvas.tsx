@@ -148,7 +148,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
         onPointerLeave={onPointerLeave}
         onPointerUp={onPointerUp}
       >
-        <g style={{ transform: `translate(${camera.x}px), ${camera.y}px` }}>
+        <g style={{ transform: `translate(${camera.x}px, ${camera.y}px)` }}>
           {layerIds.map((layerId) => (
             <LayerPreview
               key={layerId}
