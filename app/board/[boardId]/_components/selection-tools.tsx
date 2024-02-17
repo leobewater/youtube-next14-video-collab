@@ -1,5 +1,6 @@
 "use client";
 
+import { ColorPicker } from "@/app/board/[boardId]/_components/color-picker";
 import { useSelectionBounds } from "@/hooks/use-selection-bounds";
 import { useSelf } from "@/liveblocks.config";
 import { Camera, Color } from "@/types/canvas";
@@ -32,7 +33,7 @@ export const SelectionTools = memo(
           )`,
         }}
       >
-        Selection Tools!
+        <ColorPicker onChange={() => { }} />
       </div>
     );
   }
