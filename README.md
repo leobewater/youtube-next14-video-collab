@@ -27,6 +27,7 @@ Video: https://www.youtube.com/watch?v=ADJKbuayubE&t=2770s&ab_channel=CodeWithAn
 
 > npm i nanoid
 > npm i react-contenteditable
+> npm i perfect-freehand
 ```
 
 
