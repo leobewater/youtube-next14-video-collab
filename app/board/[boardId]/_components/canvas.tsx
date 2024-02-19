@@ -9,9 +9,11 @@ import {
   useMutation,
   useStorage,
   useOthersMapped,
+  useSelf,
 } from "@/liveblocks.config";
 
 import {
+  colorToCss,
   connectionIdToColor,
   findIntersectingLayersWithRectangle,
   penPointsToPathLayer,
@@ -36,6 +38,7 @@ import { LiveObject } from "@liveblocks/client";
 import { LayerPreview } from "@/app/board/[boardId]/_components/layer-preview";
 import { SelectionBox } from "@/app/board/[boardId]/_components/selection-box";
 import { SelectionTools } from "@/app/board/[boardId]/_components/selection-tools";
+import { Path } from "@/app/board/[boardId]/_components/path";
 
 const MAX_LAYERS = 100;
 
@@ -46,6 +49,7 @@ interface CanvasProps {
 export const Canvas = ({ boardId }: CanvasProps) => {
   const layerIds = useStorage((root) => root.layerIds);
 
+  const pencilDraft = useSelf((me) => me.presence.pencilDraft);
   const [canvasState, setCanvasState] = useState<CanvasState>({
     mode: CanvasMode.None,
   });
@@ -450,6 +454,14 @@ export const Canvas = ({ boardId }: CanvasProps) => {
               />
             )}
           <CursorsPresence />
+          {pencilDraft != null && pencilDraft.length > 0 && (
+            <Path
+              points={pencilDraft}
+              fill={colorToCss(lastUsedColor)}
+              x={0}
+              y={0}
+            />
+          )}
         </g>
       </svg>
     </main>
