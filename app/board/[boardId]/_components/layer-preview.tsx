@@ -7,6 +7,7 @@ import { Rectangle } from "@/app/board/[boardId]/_components/rectangle";
 import { useStorage } from "@/liveblocks.config";
 import { Ellipse } from "@/app/board/[boardId]/_components/ellipse";
 import { Text } from "@/app/board/[boardId]/_components/text";
+import { Note } from "@/app/board/[boardId]/_components/note";
 
 interface LayerPreviewProps {
   id: string;
@@ -22,6 +23,15 @@ export const LayerPreview = memo(
     }
 
     switch (layer.type) {
+      case LayerType.Note:
+        return (
+          <Note
+            id={id}
+            layer={layer}
+            onPointerDown={onLayerPointerDown}
+            selectionColor={selectionColor}
+          />
+        );
       case LayerType.Text:
         return (
           <Text
