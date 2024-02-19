@@ -6,7 +6,7 @@ import { LayerType } from "@/types/canvas";
 import { Rectangle } from "@/app/board/[boardId]/_components/rectangle";
 import { useStorage } from "@/liveblocks.config";
 import { Ellipse } from "@/app/board/[boardId]/_components/ellipse";
-
+import { Text } from "@/app/board/[boardId]/_components/text";
 
 interface LayerPreviewProps {
   id: string;
@@ -22,6 +22,15 @@ export const LayerPreview = memo(
     }
 
     switch (layer.type) {
+      case LayerType.Text:
+        return (
+          <Text
+            id={id}
+            layer={layer}
+            onPointerDown={onLayerPointerDown}
+            selectionColor={selectionColor}
+          />
+        );
       case LayerType.Ellipse:
         return (
           <Ellipse
