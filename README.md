@@ -26,6 +26,7 @@ Video: https://www.youtube.com/watch?v=ADJKbuayubE&t=2770s&ab_channel=CodeWithAn
 > npm i @liveblocks/node
 
 > npm i nanoid
+> npm i react-contenteditable
 ```
 
 
